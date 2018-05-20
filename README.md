@@ -43,20 +43,27 @@ So you might think that Hey I can do this without NLTK then why should I use NLT
 We know that some words carry more meaning than other words.We can also see that some words are just plain useless, and are filler words ,we just use these word so that the sentence doesnt't sound strange.We would not want these words taking up space in our database, or taking up valuable processing time. As such, we call these words "stop words" because they are useless, and we wish to do nothing with them.
 
 > NLTK provides us with a list of words that they consider stop words.
+
 Let's write some quick code to see how it's done
 ```
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+
 test_sentence= "I am trying to show stop word filtration"
-stop_words=set(stopwords.words("english"))
-words = word_tokenize(test_sentence)
-t=[]
-for w in words:
-	if w not in stop_words:
-		t.append(w)
 
-# t=[w for w in words if not w in stop_words]
+stop_words=set(stopwords.words("english"))            #Set of stop words NLTK provides us with
+words = word_tokenize(test_sentence)                  #Splitting into words
 
-print(t)
+filtered=[]
+
+for w in words:                                       #Iterate through all the words         
+	if w not in stop_words:                           #If the word is not a stop word , append it in filtered
+		filtered.append(w)
+
+
+print(filtered)
 ```
-
+**OUTPUT**
+```
+['I', 'trying', 'show', 'stop', 'word', 'filtration']
+```
