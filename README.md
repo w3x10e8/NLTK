@@ -1,11 +1,11 @@
-#Basics of Natural Language Toolkit
+# Basics of Natural Language Toolkit
 
-##Installing NLTK
+## Installing NLTK
 Simply run the following command
 '''
 sudo pip install -U nltk
 '''
-##Downloading the data
+## Downloading the data
 NLTK comes with many corpora, toy grammars, trained models, etc.To download run the following python code.
 
 '''
