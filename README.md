@@ -31,7 +31,7 @@ example="Hey there I am using NLTK. And it's going great"       #Some Random tex
 print(word_tokenize(example))                                   #Split into
 print(sent_tokenize(example))                                   #Split into sentences
 ```
-Output
+**OUTPUT**
 ```
 ['Hey', 'there', 'I', 'am', 'using', 'NLTK', '.', 'And', 'it', "'s", 'going', 'great']
 ['Hey there I am using NLTK.', "And it's going great"]
@@ -67,3 +67,32 @@ print(filtered)
 ```
 ['I', 'trying', 'show', 'stop', 'word', 'filtration']
 ```
+
+### Stemming words with NLTK
+Stemming is the process for reducing inflected words to their word stem (base form).A single word can appear in many variations.
+Consider the following :
+
+> The stem word of  **waited , waiting , waits** is **wait**. So what we are gonna do is normalize words to its base form.
+
+One of the most common stemming algorithms is the Porter stemming algorithm by Martin Porter. 
+Let's write some code using it
+
+```
+from nltk.stem import PorterStemmer                    #Import PorterStemmer
+ps = PorterStemmer()
+
+example_words=["game","gaming","gamed","games"]        #Example words      
+
+for w in example_words:                                #Iterate through them and stem
+	print(ps.stem(w))
+```
+
+**OUTPUT**
+game
+game
+game
+game
+
+Isn't it cool?
+
+### Part of Speech Tagging 
